@@ -9,21 +9,19 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        message = cow.Cowacter().milk('Hello from Python from a Serverless Function QWEWQQWEQWQW!')
-      
-        self.wfile.write(message.encode())
+ 
         self.wfile.write(bytes("<html><head><title>Title goes here.</title></head>", "utf-8"))
         self.wfile.write(bytes("<body><p>This is a test.</p>", "utf-8"))
         self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
-        while True:
-        test2= "despues del while"
-        self.wfile.write(test2.encode())
+        #while True:
+        #test2= "despues del while"
+        #self.wfile.write(test2.encode())
 
-        self.wfile.write(crypto(i))
-        time.sleep(15) 
-        i+= 1  
+        #self.wfile.write(crypto(i))
+        #time.sleep(15) 
+        #i+= 1  
 
 
 
