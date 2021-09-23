@@ -14,7 +14,7 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(bytes("<body><p>This is a test.</p>", "utf-8"))
         self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
-
+        self.wfile.write("TEEEST")
         #while True:
         #test2= "despues del while"
         #self.wfile.write(test2.encode())
