@@ -10,12 +10,15 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/plain')
         self.end_headers()
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function!')
+        test = "antes del while"
         self.wfile.write(message.encode())
+        self.wfile.write(test.encode())
 
         while True:
-            
+        test2= "despues del while"
+        self.wfile.write(test2.encode())
+
         self.wfile.write(crypto(i))
-        self.wfile.write("ENTRA FUNCIONA?")
         time.sleep(15) 
         i+= 1  
 
