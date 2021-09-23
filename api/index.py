@@ -10,9 +10,12 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/plain')
         self.end_headers()
         message = cow.Cowacter().milk('Hello from Python from a Serverless Function QWEWQQWEQWQW!')
-        test = "antes del while"
+      
         self.wfile.write(message.encode())
-        self.wfile.write(test.encode())
+        self.wfile.write(bytes("<html><head><title>Title goes here.</title></head>", "utf-8"))
+        self.wfile.write(bytes("<body><p>This is a test.</p>", "utf-8"))
+        self.wfile.write(bytes("<p>You accessed path: %s</p>" % self.path, "utf-8"))
+        self.wfile.write(bytes("</body></html>", "utf-8"))
 
         while True:
         test2= "despues del while"
