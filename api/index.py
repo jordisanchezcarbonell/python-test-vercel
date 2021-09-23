@@ -15,6 +15,7 @@ class handler(BaseHTTPRequestHandler):
         while True:
             
         self.wfile.write(crypto(i))
+        self.wfile.write("ENTRA FUNCIONA?")
         time.sleep(15) 
         i+= 1  
 
